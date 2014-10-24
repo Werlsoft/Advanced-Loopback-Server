@@ -79,6 +79,12 @@ public class start implements Runnable{
 		
 	}
 	
+	/**
+	 * <p>Checks if a string is an ipv4 address</p>
+	 * 
+	 * @param ip Ip address to check.
+	 * @return true when ip is a ipv4 address.
+	 */
 	public static final boolean checkIPv4(final String ip) {
 	    boolean isIPv4;
 	    try {
@@ -93,7 +99,6 @@ public class start implements Runnable{
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		try {
 			Client c = new Client(new Socket("localhost",3412));
 			c.write("Non-Sendback test FAILURE");

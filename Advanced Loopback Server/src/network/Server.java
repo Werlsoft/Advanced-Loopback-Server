@@ -11,9 +11,14 @@ public class Server implements Runnable {
 	Thread thread = new Thread(this);
 	final Handler handle;
 	
+	/**
+	 * 
+	 * @param port Port to setup the server on.
+	 * @throws IOException Thrown when there is errors.
+	 */
 	public Server(int port) throws IOException{
 		server = new ServerSocket(port);
-		handle = new Handler();
+		handle = new Handler(); //you never need to access this.
 		thread.start(); 
 	}
 
@@ -22,7 +27,7 @@ public class Server implements Runnable {
 		// TODO Auto-generated method stub
 		while(true){
 			try {
-				handle.add(server.accept());
+				handle.add(server.accept()); //this will just sit and accept clients.
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
