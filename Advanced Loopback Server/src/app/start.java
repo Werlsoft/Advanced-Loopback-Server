@@ -34,9 +34,10 @@ public class start implements Runnable{
 		}
 		
 		try {
+			System.out.println("- - - -  Server Startup  - - - -");
+			System.out.println("-- -- -- -- -- -- -- -- -- -- --\n");
 			Client c = new Client(new Socket("localhost",3412));
 			Thread.sleep(500); //This is to ensure the Non-Sendback test completes first
-			c.write("- - - -  Server Startup  - - - -\n");
 			c.write("- - - -  IPv4 Addresses  - - - -");
 			List<InetAddress> addrList = new ArrayList<InetAddress>();
 			Enumeration<NetworkInterface> e = NetworkInterface.getNetworkInterfaces();
